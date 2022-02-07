@@ -1,0 +1,21 @@
+body{
+    background-color:antiquewhite;
+    width: 100%;
+}
+
+form{
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:rgb(160, 189, 243);
+    padding: 20px;
+
+}
+
+.tablaProductos{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
