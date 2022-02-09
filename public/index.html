@@ -54,6 +54,30 @@
 
   <div id="list-products" style="padding: 1rem; background: #ccc; width: 400px; margin: auto; margin-top: 20px;"></div>
 
+
+  <!-- CHAT -->
+  <div class="contenedorChat">
+    <div id="messages" class="messages"></div>
+    <form id="formChat" class="formChat">
+        <div>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Mensaje" name="message" required>
+            <button>Enviar</button>
+        </div>
+    </form>
+  
+    <div id="messages-tpl" style="display: none">
+        {{#each messages}}
+        <div>
+          <strong>{{this.email}}:</strong>
+          <em>{{ this.message }}</em>
+          <em style="margin-left: 50px;">{{ this.fecha }}</em>
+        </div>
+        {{/each}}
+    </div>
+  </div>
+
+
   <script src="js/main.js"></script>
 
 </body>

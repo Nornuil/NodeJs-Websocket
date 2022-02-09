@@ -15,6 +15,13 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 app.io = io;
 
+//ARRAY PARA EL CHAT
+const MENSAJES = [{
+  email:"Admin",
+  message:"Bienvenido al chat!!",
+  fecha: new Date()
+}]
+
 // obtengo los productos 
 const {Productos} = require('./classProductos/classProductos');
 const manejadorProductos = new Productos();
@@ -29,9 +36,14 @@ app.use(function (req, res, next) {
   });
 
   io.on("connection", (socket) => {
-    console.log("Un cliente se ha conectado", socket.id);
+    console.log("Cliente conectado con id: ", socket.id);
     socket.emit('update_products', listadoProductos)
-    // aca existe
+    //CHAT
+    socket.on("new_message", data => {
+      MENSAJES.push(data);
+      io.sockets.emit("messages_received", MENSAJES);   
+    })
+     io.sockets.emit("messages_received", MENSAJES);
   });
   
 

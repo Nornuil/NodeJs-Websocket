@@ -19,3 +19,21 @@ form{
     display: flex;
     justify-content: space-around;
 }
+
+body .contenedorChat{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+body .contenedorChat .messages{
+    padding: 10px;
+    background-color:rgb(221, 231, 76);
+    height: 150px;
+    overflow-y: scroll;
+}
+
+body .contenedorChat .formChat{
+    margin-top: 0px;
+    background-color:rgb(167, 175, 60);
+}
